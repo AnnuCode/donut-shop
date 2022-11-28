@@ -16,17 +16,23 @@ export class DonutListComponent implements OnInit{
       {
         id: 'asdfsd',
         name: 'Chocolate',
-        description: 'chocolate wonderland'
+        description: 'chocolate wonderland',
+        icon: 'just-chocolate',
+        price: 119
       },
       {
         id: 'xcvsdf',
         name: 'Vanilla',
-        description: 'Tasty vanilla'
+        description: 'Tasty vanilla',
+        icon: 'vanilla-sundae',
+        price: 129
       },
       {
         id: 'sdfgvd',
         name: 'Chocolate Caramel',
-        description: 'Chocolate dazzled with caramel'
+        description: 'Chocolate dazzled with caramel',
+        icon: 'caramel-swirl',
+        price: 129
       }
     ]
 
