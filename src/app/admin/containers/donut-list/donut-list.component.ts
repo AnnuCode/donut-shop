@@ -4,13 +4,12 @@ import { Donut } from '../../model/donut.model';
 @Component({
   selector: 'app-donut-list',
   templateUrl: './donut-list.component.html',
-  styleUrls: ['./donut-list.component.css']
+  styleUrls: ['./donut-list.component.css'],
 })
-export class DonutListComponent implements OnInit{
-  donuts!: Donut[]
-  
+export class DonutListComponent implements OnInit {
+  donuts!: Donut[];
 
-  constructor(){}
+  constructor() {}
   ngOnInit(): void {
     this.donuts = [
       {
@@ -18,14 +17,16 @@ export class DonutListComponent implements OnInit{
         name: 'Chocolate',
         description: 'chocolate wonderland',
         icon: 'just-chocolate',
-        price: 119
+        price: 119,
+        promo: 'limited'
       },
       {
         id: 'xcvsdf',
         name: 'Vanilla',
         description: 'Tasty vanilla',
         icon: 'vanilla-sundae',
-        price: 129
+        price: 129,
+        promo: 'new'
       },
       {
         id: 'sdfgvd',
@@ -33,10 +34,11 @@ export class DonutListComponent implements OnInit{
         description: 'Chocolate dazzled with caramel',
         icon: 'caramel-swirl',
         price: 129,
-        promo: true
-      }
-    ]
-
-    
+        
+      },
+    ];
+  }
+  trackById(index: number, value: Donut) {
+    return value.id;
   }
 }

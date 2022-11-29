@@ -1,10 +1,9 @@
 <div class="donut-list">
   <ng-container *ngIf="donuts.length; else nothing">
-    <app-donut-card [donut]="donuts[0]"></app-donut-card>
-    <app-donut-card [donut]="donuts[1]"></app-donut-card>
-    <app-donut-card [donut]="donuts[2]"></app-donut-card>
+    <app-donut-card
+      *ngFor="let donut of donuts; trackBy: trackById"
+      [donut]="donut"
+    ></app-donut-card>
   </ng-container>
-<ng-template #nothing >
-  No donuts here
-</ng-template>
+  <ng-template #nothing> No donuts here </ng-template>
 </div>
