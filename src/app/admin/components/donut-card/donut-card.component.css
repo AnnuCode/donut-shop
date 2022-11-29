@@ -3,6 +3,7 @@
   height: auto;
   
 } */
+
 .donut-card {
   display: flex;
   align-items: center;
@@ -11,10 +12,18 @@
   margin-bottom: 5px;
   padding: 5px 15px;
   transition: transform 0.2s ease-in-out;
-  /* &:hover{
-    transform: translateY(-3px);
-  } */
 }
 .donut-card:hover {
   transform: translateY(-3px);
+}
+.donut-card-name {
+  font-size: 16px;
+}
+.donut-card-price {
+  font-size: 14px;
+  color: #c14583;
+}
+.donut-card-icon {
+  width: 50px;
+  margin-right: 10px;
 }
