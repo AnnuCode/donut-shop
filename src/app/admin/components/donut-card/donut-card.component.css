@@ -1,0 +1,20 @@
+/* .donut-card-icon{
+    max-width: 100%;
+  height: auto;
+  
+} */
+.donut-card {
+  display: flex;
+  align-items: center;
+  background: #f7f7f7;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 5px 15px;
+  transition: transform 0.2s ease-in-out;
+  /* &:hover{
+    transform: translateY(-3px);
+  } */
+}
+.donut-card:hover {
+  transform: translateY(-3px);
+}

@@ -8,7 +8,7 @@ import { Donut } from '../../model/donut.model';
 })
 export class DonutListComponent implements OnInit{
   donuts!: Donut[]
-  donut!: Donut
+  
 
   constructor(){}
   ngOnInit(): void {
@@ -36,6 +36,6 @@ export class DonutListComponent implements OnInit{
       }
     ]
 
-    this.donut = this.donuts[0]
+    
   }
 }
