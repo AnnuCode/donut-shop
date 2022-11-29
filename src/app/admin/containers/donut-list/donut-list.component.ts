@@ -32,7 +32,8 @@ export class DonutListComponent implements OnInit{
         name: 'Chocolate Caramel',
         description: 'Chocolate dazzled with caramel',
         icon: 'caramel-swirl',
-        price: 129
+        price: 129,
+        promo: true
       }
     ]
 

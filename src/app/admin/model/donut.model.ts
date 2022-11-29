@@ -3,5 +3,6 @@ export interface Donut {
     name: string,
     description: string,
     icon: string,
-    price: number
+    price: number,
+    promo?: boolean
 }

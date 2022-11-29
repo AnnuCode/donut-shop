@@ -12,6 +12,7 @@
   margin-bottom: 5px;
   padding: 5px 15px;
   transition: transform 0.2s ease-in-out;
+  
 }
 .donut-card:hover {
   transform: translateY(-3px);
@@ -26,4 +27,7 @@
 .donut-card-icon {
   width: 50px;
   margin-right: 10px;
+}
+.donut-card-promo {
+  border: 2px solid #eee
 }
