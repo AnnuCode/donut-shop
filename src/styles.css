@@ -56,3 +56,8 @@ label {
 .input:focus {
   border-color: #e3e3e3;
 }
+
+form .ng-invalid.ng-touched {
+  background: #ffe7e7;
+  border-color: #e66262;
+}

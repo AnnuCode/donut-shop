@@ -13,3 +13,7 @@
 .donut-form-radios-label{
     margin-right: 10px;
 }
+.donut-form-error{
+    font-size: 12px;
+    color: #e66262
+}

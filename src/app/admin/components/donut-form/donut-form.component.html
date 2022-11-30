@@ -4,14 +4,14 @@
         <input type="text" name="name" class="input" required minlength="5" ngModel #name="ngModel" />
        
         <ng-container *ngIf="name.invalid && name.touched">
-            <div *ngIf="name.errors?.['required']" >Name is required</div>
-            <div *ngIf="name.errors?.['minlength']" >Name should be atleast 5 characters</div>
+            <div *ngIf="name.errors?.['required']" class="donut-form-error" >Name is required</div>
+            <div *ngIf="name.errors?.['minlength']" class="donut-form-error" >Name should be atleast 5 characters</div>
         </ng-container>
     </label>
     <label>
         <span>Icon</span>
         <select name="icon" class="input input--select" required ngModel>
-            <option *ngFor="let icon of icons" [ngValue]="icon" >{{icon}}</option>
+            <option *ngFor="let icon of icons" [ngValue]="icon" >{{icon}}</option>  
         </select>
     </label>
     <label>
