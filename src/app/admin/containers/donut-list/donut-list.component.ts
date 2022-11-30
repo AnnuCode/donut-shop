@@ -36,6 +36,23 @@ export class DonutListComponent implements OnInit {
         price: 129,
         
       },
+      {
+        id: 'fsjner',
+        name: 'Sour Supreme',
+        description: 'For the sour lovers',
+        icon: 'sour-supreme',
+        price: 139,
+        
+      },
+      {
+        id: 'lkjief',
+        name: 'Zesty Lemon',
+        description: 'For the lemon lovers',
+        icon: 'zesty-lemon',
+        price: 129,
+        
+      },
+
     ];
   }
   trackById(index: number, value: Donut) {

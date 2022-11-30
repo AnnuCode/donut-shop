@@ -1,9 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: "Patua One", sans-serif;
+  box-sizing: border-box;
+}
+
 body {
-    background: #ffedd5;
-    color: #01a3a4;
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  background: #ffedd5;
+  color: #01a3a4;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #01a3a4;
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  span {
+    display: block;
+    margin-bottom: 5px;
   }
+}
+.input {
+  background-color: #f7f7f7;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  padding: 10px 15px;
+  outline: 0;
+  width: 100%;
+  font-size: 14px;
+
+  .input--select{
+    background-image: url("/assets/img/icon/down.svg");
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+  .input--textarea{
+    resize: vertical;
+  }
+}
+
+.input:focus {
+  border-color: #e3e3e3;
+}
