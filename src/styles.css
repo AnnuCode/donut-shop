@@ -76,3 +76,7 @@ form .ng-invalid.ng-touched {
   background: #01a3a4;
     color: #fff;
 }
+.btn-grey{
+  background: #f7f7f7;
+  color: #444;
+}

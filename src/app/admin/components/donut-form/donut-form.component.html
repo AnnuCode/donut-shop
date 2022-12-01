@@ -1,7 +1,7 @@
 <form class="donut-form" #form="ngForm" (ngSubmit)="handleSubmit(form)">
     <label>
         <span>Name</span>
-        <input type="text" name="name" class="input" required minlength="5" ngModel #name="ngModel" />
+        <input type="text" name="name" class="input" required minlength="5" ngModel #name="ngModel" [ngModelOptions]="{updateOn: 'blur'}"/>
        
         <ng-container *ngIf="name.invalid && name.touched">
             <div *ngIf="name.errors?.['required']" class="donut-form-error" >Name is required</div>
@@ -55,5 +55,7 @@
     </label>
     <!-- removed the disabled button feature -->
     <button type="submit" class="btn btn-green"  >Create</button>
+    <button type="button" class="btn btn-grey" (click)="form.resetForm()" >Reset Form</button>
+    <div class="donut-form-working" *ngIf="form.valid && form.submitted">Working...</div>
   <pre>{{ form.value | json }}</pre>
 </form>
