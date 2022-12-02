@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component,Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Donut } from '../../model/donut.model';
 
@@ -9,6 +9,7 @@ import { Donut } from '../../model/donut.model';
 })
 export class DonutFormComponent {
 
+  @Input() donut!: Donut
   @Output() create = new EventEmitter<Donut>()
 
   icons: string[] = [
