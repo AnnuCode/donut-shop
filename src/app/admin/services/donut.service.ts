@@ -5,7 +5,7 @@ import { Donut } from '../model/donut.model';
   providedIn: 'root'
 })
 export class DonutService {
-  donuts: Donut[] = [
+  private donuts: Donut[] = [
     {
       id: 'asdfsd',
       name: 'Chocolate',
@@ -49,5 +49,19 @@ export class DonutService {
 
   ]
   constructor() { }
+
+  read(){
+    return this.donuts
+  }
+  readOne(id:string){
+    const donut = this.donuts.find((donut: Donut)=> donut.id === id)
+    if (donut){
+      return donut
+    }
+    return {name:'', price:0, description:'', icon:''}
+  } 
+  create(payload: Donut){
+    this.donuts = [...this.donuts, payload]
+  }
 }
 //the service has a state now which can be used by different components

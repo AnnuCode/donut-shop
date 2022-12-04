@@ -10,7 +10,9 @@ import { DonutService } from '../../services/donut.service';
 export class DonutSingleComponent implements OnInit {
   donut!: Donut;
   onCreate(donut: Donut) {
-    console.log(donut);
+    // console.log(donut);
+    this.donutService.create(donut)
+    console.log(this.donutService.read())
   }
 
   constructor(private donutService: DonutService){
@@ -18,7 +20,7 @@ export class DonutSingleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = 'xcvsdf'
-    this.donut = this.donutService.donuts.find((donut: Donut)=> donut.id === id) || {name:'', price:0, description:'', icon:''}
+    
+    this.donut = this.donutService.readOne('abc')
   }
 }

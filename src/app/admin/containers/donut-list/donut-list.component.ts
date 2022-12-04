@@ -12,7 +12,7 @@ export class DonutListComponent implements OnInit {
 
   constructor(private donutService: DonutService) {}
   ngOnInit(): void {
-    this.donuts = this.donutService.donuts;
+    this.donuts = this.donutService.read();
   }
   trackById(index: number, value: Donut) {
     return value.id;
