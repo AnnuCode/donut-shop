@@ -1,34 +1,37 @@
-import { Component,Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Donut } from '../../model/donut.model';
 
 @Component({
   selector: 'app-donut-form',
   templateUrl: './donut-form.component.html',
-  styleUrls: ['./donut-form.component.css']
+  styleUrls: ['./donut-form.component.css'],
 })
 export class DonutFormComponent {
-
-  @Input() donut!: Donut
-  @Output() create = new EventEmitter<Donut>()
+  @Input() donut!: Donut;
+  @Output() create = new EventEmitter<Donut>();
+  @Output() update = new EventEmitter<Donut>();
 
   icons: string[] = [
     'caramel-swirl',
     'just-chocolate',
     'sour-supreme',
     'vanilla-sundae',
-    'zesty-lemon'
-  ]
+    'zesty-lemon',
+  ];
 
-  handleSubmit(form: NgForm){
+  handleCreate(form: NgForm) {
+    if (form.valid) {
+      this.create.emit(form.value); //why are we using 'this' keyword here? To be able to execute the create to the instance of the DonutFormComponent class.
+    } else {
+      form.form.markAllAsTouched();
+    }
+  }
+  handleUpdate(form: NgForm){
     if(form.valid){
-      
-      this.create.emit(form.value)
+      this.update.emit({id: this.donut.id, ...form.value})
     }else{
       form.form.markAllAsTouched()
-    } 
-    
-    
-    
+    }
   }
 }

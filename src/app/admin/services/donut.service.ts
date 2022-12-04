@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Donut } from '../model/donut.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DonutService {
   private donuts: Donut[] = [
@@ -12,7 +12,7 @@ export class DonutService {
       description: 'chocolate wonderland',
       icon: 'just-chocolate',
       price: 119,
-      promo: 'limited'
+      promo: 'limited',
     },
     {
       id: 'xcvsdf',
@@ -20,7 +20,7 @@ export class DonutService {
       description: 'Tasty vanilla',
       icon: 'vanilla-sundae',
       price: 129,
-      promo: 'new'
+      promo: 'new',
     },
     {
       id: 'sdfgvd',
@@ -28,7 +28,6 @@ export class DonutService {
       description: 'Chocolate dazzled with caramel',
       icon: 'caramel-swirl',
       price: 129,
-      
     },
     {
       id: 'fsjner',
@@ -36,7 +35,6 @@ export class DonutService {
       description: 'For the sour lovers',
       icon: 'sour-supreme',
       price: 139,
-      
     },
     {
       id: 'lkjief',
@@ -44,24 +42,33 @@ export class DonutService {
       description: 'For the lemon lovers',
       icon: 'zesty-lemon',
       price: 129,
-      
     },
+  ];
+  constructor() {}
 
-  ]
-  constructor() { }
-
-  read(){
-    return this.donuts
+  read() {
+    return this.donuts;
   }
-  readOne(id:string){
-    const donut = this.donuts.find((donut: Donut)=> donut.id === id)
-    if (donut){
-      return donut
+  readOne(id: string) {
+    const donut = this.donuts.find((donut: Donut) => donut.id === id);
+    if (donut) {
+      return donut;
     }
-    return {name:'', price:0, description:'', icon:''}
-  } 
-  create(payload: Donut){
-    this.donuts = [...this.donuts, payload]
+    return { name: '', price: 0, description: '', icon: '' };
+  }
+  create(payload: Donut) {
+    // this.donuts = [...this.donuts, payload]
+    this.donuts.push(payload);
+    console.log(this.donuts);
+  }
+  update(payload: Donut) {
+    this.donuts = this.donuts.map((donut: Donut) => {
+      if (donut.id === payload.id) {
+        return payload;
+      }
+      return donut;
+    });
+    console.log(this.donuts)
   }
 }
 //the service has a state now which can be used by different components
