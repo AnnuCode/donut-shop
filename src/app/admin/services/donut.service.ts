@@ -70,5 +70,9 @@ export class DonutService {
     });
     console.log(this.donuts)
   }
+  delete(payload: Donut){
+    this.donuts = this.donuts.filter((donut:Donut)=> donut.id !== payload.id)
+    console.log(this.donuts)
+  }
 }
 //the service has a state now which can be used by different components

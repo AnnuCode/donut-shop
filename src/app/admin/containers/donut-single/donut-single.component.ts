@@ -18,6 +18,10 @@ export class DonutSingleComponent implements OnInit {
     this.donutService.update(donut)
   }
 
+  onDelete(donut: Donut){
+    this.donutService.delete(donut)
+  }
+
   constructor(private donutService: DonutService) {}
 
   ngOnInit(): void {
