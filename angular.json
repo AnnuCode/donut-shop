@@ -63,7 +63,8 @@
               "browserTarget": "donut-shop:build:production"
             },
             "development": {
-              "browserTarget": "donut-shop:build:development"
+              "browserTarget": "donut-shop:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
